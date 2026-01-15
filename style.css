@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a2a32 0%, #0d1b2a 100%);
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.app-container {
+    background: rgba(30, 40, 50, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.mode-btn {
+    background: rgba(50, 70, 90, 0.7);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mode-btn.active {
+    background: linear-gradient(to right, #d4af37, #b8941f);
+    color: #1a2a32;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.mode-btn:hover:not(.active) {
+    background: rgba(70, 90, 110, 0.7);
+}
+
+.counter-display {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.counter-value {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.counter-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.cycle-progress {
+    font-size: 1.1rem;
+    color: #8bc34a;
+    margin-top: 5px;
+}
+
+.progress-container {
+    margin: 30px 0;
+}
+
+.progress-bar {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #d4af37, #8bc34a);
+    border-radius: 6px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #1a2a32;
+}
+
+.count-btn {
+    background: linear-gradient(145deg, #d4af37, #b8941f);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+}
+
+.count-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.6);
+}
+
+.count-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    border: 2px solid rgba(212, 175, 55, 0.5);
+}
+
+.reset-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.05);
+}
+
+.customization {
+    background: rgba(40, 55, 70, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.customization h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.setting label {
+    font-size: 1rem;
+}
+
+.setting input {
+    width: 80px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.setting input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #d4af37;
+}
+
+.goal-achievement {
+    text-align: center;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(139, 195, 74, 0.1);
+    border: 1px solid rgba(139, 195, 74, 0.3);
+    display: none;
+}
+
+.goal-achievement.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.goal-achievement i {
+    color: #8bc34a;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.5s ease;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .counter-value {
+        font-size: 4.5rem;
+    }
+    
+    .controls {
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mode-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mode-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .counter-value {
+        font-size: 3.5rem;
+    }
+    
+    .setting {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .setting input {
+        align-self: flex-end;
+    }
+}

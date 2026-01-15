@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Counter - Tasbih & Mantra Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Divine Counter</h1>
+            <p class="subtitle">A spiritual tool for counting Tasbih prayers or Hindu Mantras with customizable goals and progress tracking</p>
+        </header>
+        
+        <main class="app-container">
+            <div class="mode-selector">
+                <button class="mode-btn active" id="tasbihMode">
+                    <i class="fas fa-pray"></i> Tasbih Counter
+                </button>
+                <button class="mode-btn" id="mantraMode">
+                    <i class="fas fa-om"></i> Mantra Counter
+                </button>
+            </div>
+            
+            <div class="counter-display">
+                <div class="counter-label" id="counterLabel">Current Count</div>
+                <div class="counter-value" id="counterValue">0</div>
+                <div class="cycle-progress" id="cycleProgress">0/100 beads in this cycle</div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span>Cycle Progress</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn reset-btn" id="resetBtn" title="Reset Counter">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button class="btn count-btn" id="countBtn" title="Count">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="btn reset-btn" id="resetCycleBtn" title="Reset Cycle">
+                    <i class="fas fa-sync"></i>
+                </button>
+            </div>
+            
+            <div class="goal-achievement" id="goalAchievement">
+                <i class="fas fa-award"></i>
+                <h3>Spiritual Goal Achieved!</h3>
+                <p>You have completed <span id="completedCycles">0</span> full cycles. May your devotion bring you peace and blessings.</p>
+            </div>
+            
+            <div class="customization">
+                <h3><i class="fas fa-cog"></i> Customize Your Practice</h3>
+                
+                <div class="setting">
+                    <label for="beadsPerCycle">Beads per Cycle</label>
+                    <input type="number" id="beadsPerCycle" min="10" max="1000" value="100">
+                </div>
+                
+                <div class="setting">
+                    <label for="goalCycles">Goal Cycles</label>
+                    <input type="number" id="goalCycles" min="1" max="100" value="10">
+                </div>
+                
+                <div class="setting">
+                    <label for="vibration">Vibration Feedback</label>
+                    <input type="checkbox" id="vibration" checked>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>IT22038 Divine Counter &copy; <span id="currentYear"></span> | May your spiritual practice bring you peace and enlightenment</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
