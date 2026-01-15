@@ -18,6 +18,7 @@ const cycleProgress = document.getElementById('cycleProgress');
 const progressFill = document.getElementById('progressFill');
 const progressPercent = document.getElementById('progressPercent');
 const countBtn = document.getElementById('countBtn');
+const decrementBtn = document.getElementById('decrementBtn');
 const resetBtn = document.getElementById('resetBtn');
 const resetCycleBtn = document.getElementById('resetCycleBtn');
 const goalAchievement = document.getElementById('goalAchievement');
@@ -64,6 +65,7 @@ function setupEventListeners() {
     
     // Counting
     countBtn.addEventListener('click', incrementCount);
+    decrementBtn.addEventListener('click', decrementCount);
     
     // Reset buttons
     resetBtn.addEventListener('click', resetCount);
@@ -86,6 +88,20 @@ function setupEventListeners() {
     
     // Touch/click vibration feedback for count button on touch devices
     countBtn.addEventListener('touchstart', () => {
+        if (state.vibrationEnabled && navigator.vibrate) {
+            navigator.vibrate(10);
+        }
+    });
+
+    // Vibration feedback for decrement button
+    decrementBtn.addEventListener('mousedown', () => {
+        if (state.vibrationEnabled && navigator.vibrate) {
+            navigator.vibrate(10);
+        }
+    });
+
+    // Vibration feedback for decrement button on touch devices
+    decrementBtn.addEventListener('touchstart', () => {
         if (state.vibrationEnabled && navigator.vibrate) {
             navigator.vibrate(10);
         }
@@ -148,6 +164,39 @@ function incrementCount() {
     
     saveToLocalStorage();
     updateUI();
+}
+
+// Decrement the count
+function decrementCount() {
+    if (state.count > 0) {
+        state.count--;
+        state.cycleCount--;
+        
+        // Ensure cycle count doesn't go below 0
+        if (state.cycleCount < 0) {
+            state.cycleCount = 0;
+            
+            // If we had completed cycles, go back one
+            if (state.completedCycles > 0) {
+                state.completedCycles--;
+                state.cycleCount = state.beadsPerCycle - 1;
+            }
+        }
+        
+        // Animation feedback
+        counterValue.classList.add('pulse');
+        setTimeout(() => {
+            counterValue.classList.remove('pulse');
+        }, 500);
+        
+        // Vibration feedback
+        if (state.vibrationEnabled && navigator.vibrate) {
+            navigator.vibrate(20);
+        }
+        
+        saveToLocalStorage();
+        updateUI();
+    }
 }
 
 // Complete a cycle
