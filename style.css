@@ -136,6 +136,26 @@ h1 {
     opacity: 0.8;
 }
 
+.cycles-completed-display {
+    text-align: center;
+    padding: 15px;
+    background: rgba(139, 195, 74, 0.1);
+    border: 1px solid rgba(139, 195, 74, 0.3);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #8bc34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cycles-completed-display strong {
+    color: #d4af37;
+    font-size: 1.3rem;
+}
+
 .controls {
     display: flex;
     justify-content: center;

@@ -23,6 +23,7 @@ const resetBtn = document.getElementById('resetBtn');
 const resetCycleBtn = document.getElementById('resetCycleBtn');
 const goalAchievement = document.getElementById('goalAchievement');
 const completedCyclesSpan = document.getElementById('completedCycles');
+const totalCyclesCompleted = document.getElementById('totalCyclesCompleted');
 const beadsPerCycleInput = document.getElementById('beadsPerCycle');
 const goalCyclesInput = document.getElementById('goalCycles');
 const vibrationInput = document.getElementById('vibration');
@@ -254,12 +255,10 @@ function resetCount() {
 
 // Reset only the current cycle
 function resetCycle() {
-    if (confirm("Reset just the current cycle? Your total count and completed cycles will remain.")) {
-        state.cycleCount = 0;
-        
-        saveToLocalStorage();
-        updateUI();
-    }
+    state.cycleCount = 0;
+    
+    saveToLocalStorage();
+    updateUI();
 }
 
 // Update beads per cycle setting
@@ -322,6 +321,7 @@ function updateUI() {
     
     // Update completed cycles display
     completedCyclesSpan.textContent = state.completedCycles;
+    totalCyclesCompleted.textContent = state.completedCycles;
 }
 
 // Initialize the app when the page loads
